@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body * {
+  justify-content: center;
+}
+
+.skin-carousel {
+  height: 75vh;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid black;
+}
+
+#champion-button {
+  width: 90%;
+  margin: auto;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 60px);
+  grid-auto-rows: 60px;
+  justify-items: center;
+  align-items: center;
+}
+
+#champion-button button {
+  border: none;
+  height: 120px;
+  width: 120px;
+  transform: scale(0.45);
+  margin: 5px;
+  padding: 0;
+  transition: 0.25s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+#champion-button button:hover {
+  transform: scale(0.55);
+}
