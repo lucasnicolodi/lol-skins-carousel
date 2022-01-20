@@ -17,7 +17,7 @@ Um dos projetos mais complexos dos quais já trabalhei!
 
 <p>
 A proposta do projeto é apresentar um site que possui todos os campeões do jogo League of Legends e suas respectivas skins.
-Ele foi criado utilizando os APIs abertos da Riot Games, dispostos no site 
+  Ele foi criado utilizando os APIs abertos da Riot Games, dispostos no site <a href="https://developer.riotgames.com/docs/lol#data-dragon"> Riot Developer Portal</a>.
 </p>
 
 <div align="center">
