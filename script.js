@@ -1,5 +1,5 @@
 $.getJSON(
-  "http://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion.json",
+  "https://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion.json",
   function (data) {
     /* pegando informações do API */
     // console.log(data);
@@ -43,7 +43,7 @@ $.getJSON(
         var butt = document.createElement("button");
         butt.value = championsnames[i];
         butt.style =
-          "background: url('http://ddragon.leagueoflegends.com/cdn/12.1.1/img/champion/" +
+          "background: url('https://ddragon.leagueoflegends.com/cdn/12.1.1/img/champion/" +
           championsnames[i] +
           ".png')";
         more.appendChild(butt);
@@ -62,7 +62,7 @@ $.getJSON(
     $("#champion-button button").on("click", function () {
       var selectedChampion = $(this).val();
       $.getJSON(
-        "http://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion/" +
+        "https://ddragon.leagueoflegends.com/cdn/12.1.1/data/en_US/champion/" +
           selectedChampion +
           ".json",
         function (data) {
@@ -99,7 +99,7 @@ $.getJSON(
               more.appendChild(listItem);
               var imgListItem = document.createElement("img");
               imgListItem.src =
-                "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
+                "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
                 selectedChampion +
                 "_" +
                 numSkinPerChamp[i] +
