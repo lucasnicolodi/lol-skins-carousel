@@ -7,13 +7,89 @@ body * {
   justify-content: center;
 }
 
+/* carrossel de skins */
+
 .skin-carousel {
-  height: 75vh;
-  width: 90%;
+  position: relative;
+  display: flex;
+  height: 80vh;
+  width: 80%;
   margin: auto;
   margin-top: 20px;
   border: 1px solid black;
+  justify-content: center;
+  align-items: center;
 }
+
+.carousel-track-container {
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  transition: all 0.5s;
+
+  overflow: hidden;
+}
+
+.carousel-track li {
+  flex-basis: 20%;
+  flex-shrink: 0;
+  flex: 1;
+}
+
+.carousel-track li img {
+  /* height: 30%; */
+  width: 100%;
+  flex-shrink: 0;
+  flex: 1;
+}
+
+.carousel-button {
+  position: absolute;
+  /* display: inline-block; */
+  z-index: 1;
+  background: none;
+  border: none;
+}
+
+#carousel-text {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+
+  overflow: visible;
+}
+
+.carousel-button img {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-button.left {
+  position: absolute;
+  left: 0px;
+}
+
+.carousel-button.right {
+  position: absolute;
+  right: 0px;
+}
+
+/* botões para cada campeão */
 
 #champion-button {
   width: 90%;
