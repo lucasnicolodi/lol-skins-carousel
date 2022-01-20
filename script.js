@@ -52,6 +52,11 @@ $.getJSON(
 
     buttonForChampion();
 
+    $("#champion-button button").click(function () {
+      // document.getElementById("carousel-track").removeChild();
+      $("#carousel-track").empty();
+    });
+
     /* criando uma list com todas as skins de cada campeão clicado */
 
     $("#champion-button button").on("click", function () {
@@ -86,6 +91,8 @@ $.getJSON(
 
           function skinsCardPerChamp() {
             var more = document.getElementById("carousel-track");
+            var widthPercentage = amountSkinPerChamp * 100;
+            more.style.width = widthPercentage + "%";
             for (var i in numSkinPerChamp) {
               var listItem = document.createElement("li");
               listItem.class = "carousel-slide";
@@ -102,6 +109,49 @@ $.getJSON(
           }
 
           skinsCardPerChamp();
+
+          const prev = $(".left");
+          const next = $(".right");
+          const slider = document.querySelector(".carousel-track");
+          var translatePercentage = 100 / amountSkinPerChamp;
+          var direction;
+
+          prev.on("click", function () {
+            if (direction == -1) {
+              slider.appendChild(slider.firstElementChild);
+              direction = 1;
+            }
+            document.querySelector(
+              ".carousel-track-container"
+            ).style.justifyContent = "flex-end";
+            slider.style.transform = "translate(" + translatePercentage + "%)";
+          });
+
+          next.on("click", function () {
+            direction = -1;
+            document.querySelector(
+              ".carousel-track-container"
+            ).style.justifyContent = "flex-start";
+            slider.style.transform =
+              "translate( -" + translatePercentage + "%)";
+          });
+
+          $(".carousel-track").on(
+            "transitionend webkitTransitionEnd oTransitionEnd",
+            function () {
+              if (direction == -1) {
+                slider.appendChild(slider.firstElementChild);
+              } else if (direction == 1) {
+                slider.prepend(slider.lastElementChild);
+              }
+
+              slider.style.transition = "none";
+              slider.style.transform = "translate(0)";
+              setTimeout(function () {
+                slider.style.transition = "all 0.5s";
+              });
+            }
+          );
         }
       );
     });
